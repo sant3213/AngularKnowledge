@@ -7,15 +7,28 @@
                 [ngClass]="{'is-invalid': (firstNameVar.touched || firstNameVar.dirty) && !firstNameVar.valid}">
             <span class="invalid-feedback">
                 <span *ngIf="firstNameVar.errors?.required">
-                    Por favor ingrese su nombre
+                    Please enter your name
                 </span>
                 <span *ngIf="firstNameVar.errors?.minlength">
-                    El nombre debe ser mayor a 3 caracteres
+                    Name most be greater than 3 characters
+                </span>
+            </span>
+        </div>
+        <div class="col-md-4 mb-3">
+            <label>lastname</label>
+            <input type="text" class="form-control" type="text" required minlength="3" [(ngModel)]="user.lastName"
+                name="lastName" #lastNameVar="ngModel"
+                [ngClass]="{'is-invalid': (lastNameVar.touched || lastNameVar.dirty) && !lastNameVar.valid}">
+            <span class="invalid-feedback">
+                <span *ngIf="lastNameVar.errors?.required">
+                    Please enter your last name
+                </span>
+                <span *ngIf="lastNameVar.errors?.minlength">
+                    Last name most be greater than 3 characters
                 </span>
             </span>
         </div>
     </div>
-
     <button class="btn btn-primary" type="submit"
         [title]="userForm.valid ? 'Guarda tus datos ingresados' : 'Desabilitado hasta que los datos sean válidos'"
         [disabled]="!userForm.valid">Presione el botón
@@ -26,13 +39,3 @@
 <br>Touched: {{ userForm.touched }}
 <br>Valid: {{ userForm.valid }}
 <br>Value: {{ userForm.value | json }}
-
-<!--
-    TEMPLATE-DRIVEN
-        Generated form model
-        HTML validation
-        Two-way data binding
-    REACTIVE
-        Manually created form model
-
--->

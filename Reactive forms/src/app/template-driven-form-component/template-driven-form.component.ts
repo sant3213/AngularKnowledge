@@ -18,7 +18,6 @@ export class TemplateDrivenFormComponent implements OnInit {
   save(userForm: NgForm){
     console.log(userForm.form)
     console.log('Guardado: ' +JSON.stringify(userForm.value))
-    
   }
 
 }

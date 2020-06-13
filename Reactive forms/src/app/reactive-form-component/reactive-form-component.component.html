@@ -1,0 +1,58 @@
+<form (ngSubmit)="setAllDataFromModel()" [formGroup]="userForm" novalidate>
+    <div class="form-group">
+        <div class="col-md-4 mb-3">
+            <label>First name</label>
+            <input type="text" class="form-control" type="text" required minlength="3" formControlName="firstName"
+                [ngClass]="{'is-invalid': (userForm.get('firstName').touched || userForm.get('firstName').dirty) && !userForm.get('firstName').valid}">
+            <span class="invalid-feedback">
+                <span *ngIf="userForm.get('firstName').errors?.required">
+                    Por favor ingrese su nombre
+                </span>
+                <span *ngIf="userForm.get('firstName').errors?.minlength">
+                    Last name most be greater than 3 characters
+                </span>
+            </span>
+        </div>
+        <div class="col-md-4 mb-3">
+            <label>Last name</label>
+            <input type="text" class="form-control" type="text" required minlength="3" formControlName="lastName"
+                [ngClass]="{'is-invalid': (userForm.get('lastName').touched || userForm.get('lastName').dirty) && !userForm.get('lastName').valid}">
+            <span class="invalid-feedback">
+                <span *ngIf="userForm.get('lastName').errors?.required">
+                    Please enter your last name
+                </span>
+                <span *ngIf="userForm.get('lastName').errors?.minlength">
+                    Last name most be greater than 3 characters
+                </span>
+            </span>
+        </div>
+        <div class="col-md-4 mb-3">
+            <label>Age</label>
+            <input type="text" class="form-control" type="number" required formControlName="age"
+                [ngClass]="{'is-invalid': (userForm.get('age').touched || userForm.get('age').dirty) && !userForm.get('age').valid}">
+            <span class="invalid-feedback">
+                <span *ngIf="userForm.get('age').errors?.required">
+                    Please enter your age
+                </span>
+            </span>
+        </div>
+    </div>
+    <div class="form-row align-items-center">
+        <div class="col-auto my-1">
+            <button class="btn btn-primary" type="submit"
+                [title]="userForm.valid ? 'Guarda tus datos ingresados' : 'Desabilitado hasta que los datos sean válidos'"
+                [disabled]="!userForm.valid">Submit
+                all data
+            </button>
+        </div>
+        <div class="col-auto my-1">
+            <button class="btn btn-primary" type="submit" (click)="setPartDataFromModel()">Submit part of data
+            </button>
+        </div>
+    </div>
+</form>
+
+<br>Dirty: {{ userForm.dirty }}
+<br>Touched: {{ userForm.touched }}
+<br>Valid: {{ userForm.valid }}
+<br>Value: {{ userForm.value | json }}
