@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { User } from '../Models/user';
 @Component({
   selector: 'app-reactive-form-component',
@@ -9,14 +9,20 @@ import { User } from '../Models/user';
 export class ReactiveFormComponentComponent implements OnInit {
   userForm: FormGroup;
   user = new User();
-  constructor() { }
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
+    /*
     this.userForm = new FormGroup({
       firstName: new FormControl(),
       lastName: new FormControl(),
       age: new FormControl()
-    })
+    });*/
+    this.userForm = this.fb.group({
+      firstName: [{value:'', disabled: false}, Validators.required],
+      lastName: '',
+      age: {value:'28', disabled: true},
+    });
   }
 
   setAllDataFromModel() {

@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TemplateDrivenFormComponent } from './template-driven-form-component/template-driven-form.component';
 import { ReactiveFormComponentComponent } from './reactive-form-component/reactive-form-component.component';
+import { ReactiveFormValidartorsComponentComponent } from './reactive-form-validartors-component/reactive-form-validartors-component.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TemplateDrivenFormComponent,
-    ReactiveFormComponentComponent
+    ReactiveFormComponentComponent,
+    ReactiveFormValidartorsComponentComponent
   ],
   imports: [
     BrowserModule,
