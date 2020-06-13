@@ -1,14 +1,22 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators, AbstractControl, ValidatorFn } from '@angular/forms';
-import { UserValidation } from '../Models/userValidation';
+import { FormGroup, Validators, FormBuilder, AbstractControl, ValidatorFn } from '@angular/forms';
 
-// **** Custom Validator *****
-function ratingRange(c: AbstractControl): { [key: string]: boolean } | null {
-  if (c.value !== null && (isNaN(c.value) || c.value < 1 || c.value > 5)) {
-    return { 'range': true };
+// ***** Cross Field validation *******////
+function passwordMatcher(c: AbstractControl): {[key: string]: boolean} | null {
+  const passwordControl = c.get('password');
+  const confirmControl = c.get('confirmPassword');
+
+  // To prevent an error appear when the user hasn´t touch the fields
+  if(passwordControl.pristine || confirmControl.pristine){
+    return null;
   }
-  return null
+
+  if(passwordControl.value == confirmControl.value) {
+    return null;
+  }
+  return {'match':true};
 }
+
 // **** Custom Validator with factory function *****
 function ratingRangeWithParams(min: number, max: number): ValidatorFn {
   return (c: AbstractControl): { [key: string]: boolean } | null =>{
@@ -19,13 +27,12 @@ function ratingRangeWithParams(min: number, max: number): ValidatorFn {
   }
 }
 @Component({
-  selector: 'app-reactive-form-validartors-component',
-  templateUrl: './reactive-form-validartors-component.component.html',
-  styleUrls: ['./reactive-form-validartors-component.component.css']
+  selector: 'app-reactive-form-cross-field-validation-component',
+  templateUrl: './reactive-form-cross-field-validation-component.component.html',
+  styleUrls: ['./reactive-form-cross-field-validation-component.component.css']
 })
-export class ReactiveFormValidartorsComponentComponent implements OnInit {
+export class ReactiveFormCrossFieldValidationComponentComponent implements OnInit {
   userForm: FormGroup;
-  user = new UserValidation();
   constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
@@ -34,6 +41,10 @@ export class ReactiveFormValidartorsComponentComponent implements OnInit {
       lastName: ['', Validators.required],
       email: ['', Validators.email],
       phone: '',
+      passwordGroup: this.fb.group({
+        password: ['', [Validators.required]],
+        confirmPassword: ['', Validators.required],
+      }, {validator: passwordMatcher}),     
       notification: 'email',
       rating: [null, ratingRangeWithParams(1,5)],
       age: { value: '28', disabled: true },
@@ -70,4 +81,5 @@ export class ReactiveFormValidartorsComponentComponent implements OnInit {
     }
     phoneControl.updateValueAndValidity();
   }
+
 }
