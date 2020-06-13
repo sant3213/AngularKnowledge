@@ -1,0 +1,38 @@
+<form (ngSubmit)="save(userForm)" #userForm="ngForm" novalidate>
+    <div class="form-group">
+        <div class="col-md-4 mb-3">
+            <label>First name</label>
+            <input type="text" class="form-control" type="text" required minlength="3" [(ngModel)]="user.firstName"
+                name="firstName" #firstNameVar="ngModel"
+                [ngClass]="{'is-invalid': (firstNameVar.touched || firstNameVar.dirty) && !firstNameVar.valid}">
+            <span class="invalid-feedback">
+                <span *ngIf="firstNameVar.errors?.required">
+                    Por favor ingrese su nombre
+                </span>
+                <span *ngIf="firstNameVar.errors?.minlength">
+                    El nombre debe ser mayor a 3 caracteres
+                </span>
+            </span>
+        </div>
+    </div>
+
+    <button class="btn btn-primary" type="submit"
+        [title]="userForm.valid ? 'Guarda tus datos ingresados' : 'Desabilitado hasta que los datos sean válidos'"
+        [disabled]="!userForm.valid">Presione el botón
+    </button>
+</form>
+
+<br>Dirty: {{ userForm.dirty }}
+<br>Touched: {{ userForm.touched }}
+<br>Valid: {{ userForm.valid }}
+<br>Value: {{ userForm.value | json }}
+
+<!--
+    TEMPLATE-DRIVEN
+        Generated form model
+        HTML validation
+        Two-way data binding
+    REACTIVE
+        Manually created form model
+
+-->
