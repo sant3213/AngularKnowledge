@@ -1,6 +1,6 @@
 <form (ngSubmit)="save(userForm)" #userForm="ngForm" novalidate>
     <div class="form-group">
-        <div class="col-md-4 mb-3">
+        <div class="col-md-8 mb-3">
             <label>First name</label>
             <input type="text" class="form-control" type="text" required minlength="3" [(ngModel)]="user.firstName"
                 name="firstName" #firstNameVar="ngModel"
@@ -14,7 +14,7 @@
                 </span>
             </span>
         </div>
-        <div class="col-md-4 mb-3">
+        <div class="col-md-8 mb-3">
             <label>lastname</label>
             <input type="text" class="form-control" type="text" required minlength="3" [(ngModel)]="user.lastName"
                 name="lastName" #lastNameVar="ngModel"

@@ -1,6 +1,6 @@
 <form (ngSubmit)="setAllDataFromModel()" [formGroup]="userForm" novalidate>
     <div class="form-group">
-        <div class="col-md-4 mb-3">
+        <div class="col-md-8 mb-3">
             <label>First name</label>
             <input type="text" class="form-control" type="text" formControlName="firstName"
                 [ngClass]="{'is-invalid': (userForm.get('firstName').touched || userForm.get('firstName').dirty) && !userForm.get('firstName').valid}">
@@ -13,7 +13,7 @@
                 </span>
             </span>
         </div>
-        <div class="col-md-4 mb-3">
+        <div class="col-md-8 mb-3">
             <label>Last name</label>
             <input type="text" class="form-control" type="text" formControlName="lastName"
                 [ngClass]="{'is-invalid': (userForm.get('lastName').touched || userForm.get('lastName').dirty) && !userForm.get('lastName').valid}">
@@ -27,7 +27,7 @@
             </span>
         </div>
         <div class="form-group row mb-2">
-            <label class="col-md-2 col-fomr-label pt-0">Send notification</label>
+            <label class="col-md-8 col-fomr-label pt-0">Send notification</label>
             <div class="col-md-8">
                 <div class="form-check form-check-inline">
                     <label class="form-check-label">
@@ -41,7 +41,7 @@
                     </label>
                 </div>
             </div>
-            <div class="col-md-4 mb-3">
+            <div class="col-md-8 mb-3">
                 <label>Phone</label>
                 <input type="tel" class="form-control" type="text" formControlName="phone"
                     [ngClass]="{'is-invalid': !userForm.get('phone').valid }">
@@ -52,7 +52,7 @@
                 </span>
             </div>
         </div>
-        <div class="col-md-4 mb-3">
+        <div class="col-md-8 mb-3">
             <label>Age</label>
             <input type="text" class="form-control" type="number" required formControlName="age"
                 [ngClass]="{'is-invalid': (userForm.get('age').touched || userForm.get('age').dirty) && !userForm.get('age').valid}">
@@ -62,7 +62,7 @@
                 </span>
             </span>
         </div>
-        <div class="col-md-4 mb-3">
+        <div class="col-md-8 mb-3">
             <label>Rating</label>
             <input type="number" class="form-control" type="number" required formControlName="rating"
                 [ngClass]="{'is-invalid': (userForm.get('rating').touched || userForm.get('rating').dirty) && !userForm.get('rating').valid}">
@@ -73,8 +73,8 @@
             </span>
         </div>
         <div formGroupName="passwordGroup">
-            <div class="form-group col-md-4 mb-3">
-                <label class="col-md-2 col-form-label">Enter your password</label>
+            <div class="form-group col-md-8 mb-3">
+                <label class="col-md-8 col-form-label">Enter your password</label>
                 <div class="col-md-8">
                     <input type="password" class="form-control" formControlName="password"
                         [ngClass]="{'is-invalid': userForm.get('passwordGroup').errors || ((userForm.get('passwordGroup.password').touched || userForm.get('passwordGroup.password').dirty) && !userForm.get('passwordGroup.password').valid) }">
@@ -85,8 +85,8 @@
                     </span>
                 </div>
             </div>
-            <div class="form-group col-md-4 mb-3">
-                <label class="col-md-2 col-form-label">Confirm password</label>
+            <div class="form-group col-md-8 mb-3">
+                <label class="col-md-8 col-form-label">Confirm password</label>
                 <div class="col-md-8">
                     <input type="password" class="form-control" formControlName="confirmPassword"
                         [ngClass]="{'is-invalid': userForm.get('passwordGroup').errors || ((userForm.get('passwordGroup.confirmPassword').touched || userForm.get('passwordGroup.confirmPassword').dirty) && !userForm.get('passwordGroup.confirmPassword').valid) }">

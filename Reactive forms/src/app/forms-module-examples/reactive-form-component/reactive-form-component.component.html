@@ -1,6 +1,6 @@
 <form (ngSubmit)="setAllDataFromModel()" [formGroup]="userForm" novalidate>
-    <div class="form-group">
-        <div class="col-md-4 mb-3">
+    <div class="form-group" >
+        <div class="col-md-8 mb-3" >
             <label>First name</label>
             <input type="text" class="form-control" type="text" required minlength="3" formControlName="firstName"
                 [ngClass]="{'is-invalid': (userForm.get('firstName').touched || userForm.get('firstName').dirty) && !userForm.get('firstName').valid}">
@@ -13,7 +13,7 @@
                 </span>
             </span>
         </div>
-        <div class="col-md-4 mb-3">
+        <div class="col-md-8 mb-3">
             <label>Last name</label>
             <input type="text" class="form-control" type="text" required minlength="3" formControlName="lastName"
                 [ngClass]="{'is-invalid': (userForm.get('lastName').touched || userForm.get('lastName').dirty) && !userForm.get('lastName').valid}">
@@ -26,7 +26,7 @@
                 </span>
             </span>
         </div>
-        <div class="col-md-4 mb-3">
+        <div class="col-md-8 mb-3">
             <label>Age</label>
             <input type="text" class="form-control" type="number" required formControlName="age"
                 [ngClass]="{'is-invalid': (userForm.get('age').touched || userForm.get('age').dirty) && !userForm.get('age').valid}">
