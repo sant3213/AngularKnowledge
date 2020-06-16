@@ -2,13 +2,13 @@
     <div class="card">
         <div class="card-header" id="headingOne">
             <h5 class="mb-0">
-                <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
-                    aria-controls="collapseOne">
+                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseOne"
+                    aria-expanded="false" aria-controls="collapseOne">
                     Template driven Form
                 </button>
             </h5>
         </div>
-        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
             <div class="card-body">
                 <app-template-driven-form></app-template-driven-form>
             </div>
@@ -37,11 +37,11 @@
             <h5 class="mb-0">
                 <button class="btn btn-link" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true"
                     aria-controls="collapseThree">
-                    Reactive Form with alidartors
+                    Reactive Form with Validartors
                 </button>
             </h5>
         </div>
-        <div id="collapseThree" class="collapse show" aria-labelledby="headingThree" data-parent="#accordion">
+        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
             <div class="card-body">
                 <app-reactive-form-validartors-component></app-reactive-form-validartors-component>
             </div>
@@ -57,12 +57,14 @@
                 </button>
             </h5>
         </div>
-        <div id="collapseFourth" class="collapse show" aria-labelledby="headingFourth" data-parent="#accordion">
+        <div id="collapseFourth" class="collapse" aria-labelledby="headingFourth" data-parent="#accordion">
             <div class="card-body">
-        <app-reactive-form-cross-field-validation-component></app-reactive-form-cross-field-validation-component>
+                <app-reactive-form-cross-field-validation-component>
+                </app-reactive-form-cross-field-validation-component>
+            </div>
+        </div>
     </div>
-    </div>
-    </div>
+    <br>
     <div class="card">
         <div class="card-header" id="headingFifth">
             <h5 class="mb-0">
@@ -72,11 +74,27 @@
                 </button>
             </h5>
         </div>
-        <div id="collapseFifth" class="collapse show" aria-labelledby="headingFifth" data-parent="#accordion">
+        <div id="collapseFifth" class="collapse" aria-labelledby="headingFifth" data-parent="#accordion">
             <div class="card-body">
-        <app-watcher-reactive-to-changes></app-watcher-reactive-to-changes>
+                <app-watcher-reactive-to-changes></app-watcher-reactive-to-changes>
+            </div>
+        </div>
     </div>
-    </div>
+    <br>
+    <div class="card">
+        <div class="card-header" id="headingSixth">
+            <h5 class="mb-0">
+                <button class="btn btn-link" data-toggle="collapse" data-target="#collapseSixth" aria-expanded="true"
+                    aria-controls="collapseSixth">
+                    Dinamycally duplicate inputs
+                </button>
+            </h5>
+        </div>
+        <div id="collapseSixth" class="collapse " aria-labelledby="headingSixth" data-parent="#accordion">
+            <div class="card-body">
+                <app-dynamically-duplicate-input></app-dynamically-duplicate-input>
+            </div>
+        </div>
     </div>
 </div>
 <router-outlet></router-outlet>

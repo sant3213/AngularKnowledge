@@ -51,7 +51,7 @@ export class WatcherReactiveToChangesComponent implements OnInit {
       email: ['', Validators.email],
       phone: '',
       passwordGroup: this.fb.group({
-        password: ['', [Validators.required]],
+        password: ['', [Validators.required, Validators.minLength(3)]],
         confirmPassword: ['', Validators.required],
       }, {validator: passwordMatcher}),     
       notification: 'email',
