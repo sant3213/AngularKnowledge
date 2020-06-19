@@ -7,6 +7,7 @@ import { ReactiveFormCrossFieldValidationComponentComponent } from './reactive-f
 import { WatcherReactiveToChangesComponent } from './watcher-reactive-to-changes/watcher-reactive-to-changes.component';
 import {DynamicallyDuplicateInputComponent} from './dynamically-duplicate-input/dynamically-duplicate-input.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ShowFormsComponent } from './show-forms/show-forms.component';
 
 @NgModule({
   declarations: [ 
@@ -15,7 +16,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ReactiveFormValidartorsComponentComponent,
     ReactiveFormCrossFieldValidationComponentComponent,
     WatcherReactiveToChangesComponent,
-    DynamicallyDuplicateInputComponent
+    DynamicallyDuplicateInputComponent,
+    ShowFormsComponent
   ],
   imports: [
     CommonModule,
@@ -28,6 +30,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ReactiveFormValidartorsComponentComponent,
     ReactiveFormCrossFieldValidationComponentComponent,
     WatcherReactiveToChangesComponent,
-    DynamicallyDuplicateInputComponent]
+    DynamicallyDuplicateInputComponent,
+    ShowFormsComponent]
 })
 export class FormsModuleExample { }

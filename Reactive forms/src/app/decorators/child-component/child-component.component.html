@@ -1,0 +1,15 @@
+<p class="text">In this example I have two components. The parent component and the child component. The child component
+    is inside the parent component HTML code and it is called with the selector.
+    <br>
+    The parent component has a variable defined "message".
+    It will contain the text that will be sent inside the selector child just like this:</p>
+<p class="text"> [messageToShow]="message" </p>
+<p class="text"><b>Note:</b> <br>- "message" is the variable that contains the text. </p>
+<p class="text">- "messageToShow" is the variable used to recieve this information in the child component.</p>
+<br>
+<p class="text">The component child will get its value with the decorator @input in its ts component code, just like this:
+    @Input() messageToShow: any;</p>
+<br>
+<p class="text">To show the content of the variable we use interpolation like this {{interpolation}}</p>
+<p class="text">{{messageToShow1}}</p>
+<p class="text">{{messageToShow2}}</p>
