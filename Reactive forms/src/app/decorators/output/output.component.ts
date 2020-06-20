@@ -9,6 +9,7 @@ export class OutputComponent implements OnInit {
 
   message: string;
   message2: string;
+  outputMessageFromChild:string;
   constructor() {
     this.message="Testing input 1",
     this.message2="Testing input number 2"
@@ -16,6 +17,9 @@ export class OutputComponent implements OnInit {
 
   ngOnInit() {
     
+  }
+  GetChildData(data){
+    this.outputMessageFromChild = data
   }
 
 }

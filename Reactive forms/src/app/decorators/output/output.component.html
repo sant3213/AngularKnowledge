@@ -1,4 +1,6 @@
 <div>
     <h1>Input Decorator</h1>
-    <app-child-component [messageToShow1]="message" [messageToShow2]="message2"></app-child-component>
+    <app-child-component [message1ToChild]="message" [message2ToChild]="message2" (messageToParent) ="GetChildData($event)"></app-child-component>
+    <h1>Output Decorator</h1>
+    <p *ngIf="outputMessageFromChild">{{outputMessageFromChild}}</p>
 </div>

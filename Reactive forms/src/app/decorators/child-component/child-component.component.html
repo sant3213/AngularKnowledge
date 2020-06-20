@@ -11,5 +11,7 @@
     @Input() messageToShow: any;</p>
 <br>
 <p class="text">To show the content of the variable we use interpolation like this {{interpolation}}</p>
-<p class="text">{{messageToShow1}}</p>
-<p class="text">{{messageToShow2}}</p>
+<p class="text">{{message1ToChild}}</p>
+<p class="text">{{message2ToChild}}</p>
+
+<button (click)="sendMessageToOutput()">Send message to parent component</button>
